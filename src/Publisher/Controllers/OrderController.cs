@@ -11,7 +11,7 @@ namespace Publisher.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        private const string QueueUri = "rabbitmq://localhost/order-consumer-queue";
+        private const string QueueUri = "queue:order-consumer-queue";
         private readonly ILogger<OrderController> _logger;
         private readonly IBusControl _busControl;
 
