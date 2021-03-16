@@ -1,0 +1,33 @@
+version: '3.4'
+
+networks:
+  app:
+    driver: bridge
+
+services:
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    networks:
+      - app
+    ports:
+      - '4369:4369'
+      - '5672:5672'
+      - '25672:25672'
+      - '15672:15672'
+
+  consumer:
+    image: ${DOCKER_REGISTRY-}consumer
+    build:
+      context: .
+      dockerfile: src/Consumer/Dockerfile
+    networks:
+      - app
+
+  publisher:
+    image: ${DOCKER_REGISTRY-}publisher
+    networks:
+      - app
+    build:
+      context: .
+      dockerfile: src/Publisher/Dockerfile

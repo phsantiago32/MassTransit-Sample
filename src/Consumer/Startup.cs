@@ -30,7 +30,7 @@ namespace Consumer
                         e.ConfigureConsumer<OrderConsumer>(context);
                     });
 
-                    config.Host("localhost", "/", h =>
+                    config.Host("rabbitmq", "/", h =>
                     {
                         h.Username("guest");
                         h.Password("guest");
@@ -57,7 +57,7 @@ namespace Consumer
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Consumer v1"));
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 

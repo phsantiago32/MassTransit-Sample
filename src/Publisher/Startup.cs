@@ -24,7 +24,7 @@ namespace Publisher
             {
                 cfg.UsingRabbitMq((context, config) =>
                 {
-                    config.Host("localhost", "/", h =>
+                    config.Host("rabbitmq", "/", h =>
                     {
                         h.Username("guest");
                         h.Password("guest");
@@ -49,7 +49,7 @@ namespace Publisher
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Publisher v1"));
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 
