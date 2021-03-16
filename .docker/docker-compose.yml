@@ -23,7 +23,7 @@ services:
     image: consumer
     build:
       context: .
-      dockerfile: src/Consumer/Dockerfile
+      dockerfile: ../src/Consumer/Dockerfile
     #networks:
     #  - app
 
@@ -33,4 +33,4 @@ services:
     #  - app
     build:
       context: .
-      dockerfile: src/Publisher/Dockerfile
+      dockerfile: ../src/Publisher/Dockerfile
