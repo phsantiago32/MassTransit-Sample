@@ -16,8 +16,9 @@ Junto a criação da exchange, é feito um bind dessa exchange à outra criada p
 
 ### Como utilizar
 
-1 - Rode os projetos utilizando os seguinte comandos:
+Você pode rodar os projetos das seguintes formas:
 
+1. dotnet CLI:
 
 ``` shell
 cd .\src\
@@ -28,6 +29,14 @@ dotnet run --project .\Publisher\Publisher.csproj
 
 ```
 
-2- Chame o endpoint para enviar uma mensagem nova a fila, utilizando a interface do swagger:
+2.  docker-compose
 
-https://localhost:5003/swagger/index.html
+``` shell
+docker-compose up
+```
+
+Ao utilizar o docker-compose, uma instância do rabbitmq sobe junto com as aplicações.
+
+Com a aplicação rodando, chame o endpoint para enviar uma mensagem para a fila, utilizando a interface do swagger:
+
+> http://localhost:5000/swagger/index.html
